@@ -14,16 +14,24 @@ public class HomePage extends BasePage {
         super(webDriver);
     }
 
-    @FindBy(className = "fc-button-label")
-    private WebElement consentField;
+//    @FindBy(className = "fc-button-label")
+//    private WebElement consentField;
     @FindBy(xpath = "//h5[text()='Alerts, Frame & Windows']")
     private WebElement windowField;
+
+    @FindBy(xpath = "//h5[text()='Forms']")
+    private WebElement elementsField;
 
 
     public void navigateToAlertFrameWindowPage() {
         elementMethods.ScrollElementByPixel(0,450);
-        elementMethods.clickElement(consentField);
+       // elementMethods.clickElement(consentField);
         elementMethods.clickElement(windowField);
+    }
+
+    public void navigateToFormsPage() {
+        elementMethods.ScrollElementByPixel(0,450);
+        elementMethods.clickElement(elementsField);
     }
 
 }

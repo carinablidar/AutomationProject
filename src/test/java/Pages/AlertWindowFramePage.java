@@ -13,10 +13,17 @@ public class AlertWindowFramePage extends BasePage {
         super(webDriver);
     }
     @FindBy(xpath = "//span[text()='Alerts']")
+    public WebElement alertField;
+
+    @FindBy(xpath = "//span[text()='Frames']")
     public WebElement frameField;
 
     public void navigateToAlertPage() {
         elementMethods.ScrollElementByPixel(0,350);
+        elementMethods.clickElement(alertField);
+    }
+
+    public void navigateToFramePage() {
         elementMethods.clickElement(frameField);
     }
 }

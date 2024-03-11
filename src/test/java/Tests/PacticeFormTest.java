@@ -1,6 +1,9 @@
 package Tests;
 
 import HelperMethods.ElementMethods;
+import Pages.HomePage;
+import Pages.PracticeFormPage;
+import Pages.PractiseFormsPage;
 import ShareData.ShareData;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,102 +25,115 @@ public class PacticeFormTest extends ShareData {
     @Test
     public void metodaTest() {
 
-        ElementMethods elementMethods = new ElementMethods(getGetWebDriver());
+        HomePage homePage = new HomePage(getGetWebDriver());
+        homePage.navigateToFormsPage();
 
 
-        //facem scroll la pagina
-        JavascriptExecutor js = (JavascriptExecutor) getGetWebDriver();
-        js.executeScript("window.scrollBy(0,450)", "");
+        PracticeFormPage practiceFormPage = new PracticeFormPage(getGetWebDriver());
+        practiceFormPage.navigateToPracticeForm();
 
-        //identificam un element dupa clasa
-        WebElement consentField = getGetWebDriver().findElement(By.className("fc-button-label")); //pui valoarea clasei din site, cu inspect element
-        consentField.click();
+        String firstNameValue = "Carina";
+        String lastNameValue = "Blidar";
+        String emailValue = "test@test";
+        String numarValue = "02555414";
+        String monthDateOfBirth = "May";
+        String yearDateOfBirth = "1995";
+        String dayValue = "17";
+        String genderValue = "Male";
 
-        WebElement elementsField = getGetWebDriver().findElement(By.xpath("//h5[text()='Forms']"));
-        elementsField.click();
 
-        //mai putem un scroll
-        js.executeScript("window.scrollBy(0,350)", "");
+        PractiseFormsPage practiseFormsPage = new PractiseFormsPage(getGetWebDriver());
+        practiseFormsPage.fillFirstName(firstNameValue);
+        practiseFormsPage.fillLastName(lastNameValue);
+        practiseFormsPage.fillEmail(emailValue);
+        practiseFormsPage.fillNumarField(numarValue);
+        practiseFormsPage.fillDateOfBirth(monthDateOfBirth);
+        practiseFormsPage.fillDateOfBirth(yearDateOfBirth);
+        practiseFormsPage.fillDateOfBirth(dayValue);
+        practiseFormsPage.pickGender(genderValue);
 
-        WebElement webTablesField = getGetWebDriver().findElement(By.xpath("//span[text()='Practice Form']"));
-        webTablesField.click();
 
-        WebElement firstNameField = getGetWebDriver().findElement(By.id("firstName"));
-        String firstNameValue="Carina";
-        elementMethods.filledElement(firstNameField, firstNameValue);
 
-        //identificam un element dupa css
-        WebElement lastNameField = getGetWebDriver().findElement(By.cssSelector("input[placeholder='Last Name"));
-        String lastNameValue="Blidar";
-        elementMethods.filledElement(lastNameField, lastNameValue);
 
-        WebElement emailField = getGetWebDriver().findElement(By.cssSelector("input[placeholder='name@example.com"));
-        String emailValue="blidar.carina@yahoo.com";
-        elementMethods.filledElement(emailField, emailValue);
 
-        WebElement numarField = getGetWebDriver().findElement(By.cssSelector("input[placeholder='Mobile Number"));
-        String numarValue="0745845691";
-        elementMethods.filledElement(numarField, numarValue);
+
+
+//        WebElement firstNameField = getGetWebDriver().findElement(By.id("firstName"));
+//        String firstNameValue="Carina";
+//        elementMethods.filledElement(firstNameField, firstNameValue);
+
+//        //identificam un element dupa css
+//        WebElement lastNameField = getGetWebDriver().findElement(By.cssSelector("input[placeholder='Last Name"));
+//        String lastNameValue="Blidar";
+//        elementMethods.filledElement(lastNameField, lastNameValue);
+//
+//        WebElement emailField = getGetWebDriver().findElement(By.cssSelector("input[placeholder='name@example.com"));
+//        String emailValue="blidar.carina@yahoo.com";
+//        elementMethods.filledElement(emailField, emailValue);
+
+//        WebElement numarField = getGetWebDriver().findElement(By.cssSelector("input[placeholder='Mobile Number"));
+//        String numarValue="0745845691";
+//        elementMethods.filledElement(numarField, numarValue);
 
 
         //dupa calendar
-        WebElement dateOfBirthField = getGetWebDriver().findElement(By.cssSelector(".react-datepicker__input-container"));
-        dateOfBirthField.click();
-
-       //dupa drop down calendar
-        WebElement monthDateOfBirth = getGetWebDriver().findElement(By.cssSelector(".react-datepicker__month-select"));
-        String monthValue = "May";
-        elementMethods.selectTextElement(monthDateOfBirth, monthValue);
-
-
-        WebElement yearDateOfBirth = getGetWebDriver().findElement(By.cssSelector(".react-datepicker__year-select"));
-        String yearValue = "1995";
-        elementMethods.selectValueElement(yearDateOfBirth, yearValue);
-
-
-        List<WebElement> dayDateOfBirthFields = getGetWebDriver().findElements(By.xpath("//div[not(contains(@class, 'outside-month')) and contains(@class, 'react-datepicker__day react-datepicker__day')]"));
-        String dayValue = "17";
-
-        for (Integer i = 0; i < dayDateOfBirthFields.size(); i++) {
-            if (dayDateOfBirthFields.get(i).getText().equals(dayValue)) {
-                dayDateOfBirthFields.get(i).click();
-                break;
-            }
-        }
-
-
-        String genderValue = "Female";
-        genderFiled(genderValue);
+//        WebElement dateOfBirthField = getGetWebDriver().findElement(By.cssSelector(".react-datepicker__input-container"));
+//        dateOfBirthField.click();
+//
+//       //dupa drop down calendar
+//        WebElement monthDateOfBirth = getGetWebDriver().findElement(By.cssSelector(".react-datepicker__month-select"));
+//        String monthValue = "May";
+//        elementMethods.selectTextElement(monthDateOfBirth, monthValue);
+//
+//
+//        WebElement yearDateOfBirth = getGetWebDriver().findElement(By.cssSelector(".react-datepicker__year-select"));
+//        String yearValue = "1995";
+//        elementMethods.selectValueElement(yearDateOfBirth, yearValue);
+//
+//
+//        List<WebElement> dayDateOfBirthFields = getGetWebDriver().findElements(By.xpath("//div[not(contains(@class, 'outside-month')) and contains(@class, 'react-datepicker__day react-datepicker__day')]"));
+//        String dayValue = "17";
+//
+//        for (Integer i = 0; i < dayDateOfBirthFields.size(); i++) {
+//            if (dayDateOfBirthFields.get(i).getText().equals(dayValue)) {
+//                dayDateOfBirthFields.get(i).click();
+//                break;
+//            }
+//        }
 
 
+//        String genderValue = "Female";
+//        genderFiled(genderValue);
+//
+//
+//
+//
+//
+//        //facem un algoritm care sa imi afiseze val pe care i le specific
+//        List<String> hobbies = Arrays.asList("Sports", "Music", "Reading");
+//        List<WebElement> hobbiesLabelsList = getGetWebDriver().findElements(By.xpath("//div[@id='hobbiesWrapper']//label[@class='custom-control-label']"));
+//
+//
+//        for (int i = 0; i < hobbiesLabelsList.size(); i++) {
+//            String currentElementText = hobbiesLabelsList.get(i).getText();
+//            if (hobbies.contains(currentElementText)) {
+//                new WebDriverWait(getGetWebDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(hobbiesLabelsList.get(i))).click();
+//            }
+//        }
 
-        js.executeScript("window.scrollBy(0,350)", "");
 
-        //facem un algoritm care sa imi afiseze val pe care i le specific
-        List<String> hobbies = Arrays.asList("Sports", "Music", "Reading");
-        List<WebElement> hobbiesLabelsList = getGetWebDriver().findElements(By.xpath("//div[@id='hobbiesWrapper']//label[@class='custom-control-label']"));
-
-
-        for (int i = 0; i < hobbiesLabelsList.size(); i++) {
-            String currentElementText = hobbiesLabelsList.get(i).getText();
-            if (hobbies.contains(currentElementText)) {
-                new WebDriverWait(getGetWebDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(hobbiesLabelsList.get(i))).click();
-            }
-        }
+//        String subjectsValue = "Economics";
+//        WebElement subjectsField = getGetWebDriver().findElement(By.id("subjectsInput"));
+//        elementMethods.fillPressElement(subjectsField, subjectsValue, Keys.ENTER);
 
 
-        String subjectsValue = "Economics";
-        WebElement subjectsField = getGetWebDriver().findElement(By.id("subjectsInput"));
-        elementMethods.fillPressElement(subjectsField, subjectsValue, Keys.ENTER);
+//        WebElement pictureField = getGetWebDriver().findElement(By.id("uploadPicture"));
+//        String filePath = "src/test/resources/me.jpg";
+//        elementMethods.filledElement(pictureField, new File(filePath).getAbsolutePath());
 
-
-        WebElement pictureField = getGetWebDriver().findElement(By.id("uploadPicture"));
-        String filePath = "src/test/resources/me.jpg";
-        elementMethods.filledElement(pictureField, new File(filePath).getAbsolutePath());
-
-        WebElement addressField = getGetWebDriver().findElement(By.cssSelector("textarea[placeholder='Current Address']"));
-        String addressValue="test";
-        elementMethods.filledElement(addressField, addressValue);
+//        WebElement addressField = getGetWebDriver().findElement(By.cssSelector("textarea[placeholder='Current Address']"));
+//        String addressValue="test";
+//        elementMethods.filledElement(addressField, addressValue);
 
 
         WebElement stateField = getGetWebDriver().findElement(By.xpath("//div[text()='Select State']"));
@@ -182,18 +198,18 @@ public class PacticeFormTest extends ShareData {
 
     }
 
-    public void genderFiled(String gender) {
-        if (gender == "Male") {
-            WebElement genderField = getGetWebDriver().findElement(By.cssSelector("label[for=gender-radio-1]"));
-            genderField.click();
-        } else if (gender == "Female") {
-            WebElement genderField = getGetWebDriver().findElement(By.cssSelector("label[for=gender-radio-2]"));
-            genderField.click();
-
-        } else  {
-            WebElement genderField = getGetWebDriver().findElement(By.cssSelector("label[for=gender-radio-3]"));
-            genderField.click();
-        }
-    }
+//    public void genderFiled(String gender) {
+//        if (gender == "Male") {
+//            WebElement genderField = getGetWebDriver().findElement(By.cssSelector("label[for=gender-radio-1]"));
+//            genderField.click();
+//        } else if (gender == "Female") {
+//            WebElement genderField = getGetWebDriver().findElement(By.cssSelector("label[for=gender-radio-2]"));
+//            genderField.click();
+//
+//        } else  {
+//            WebElement genderField = getGetWebDriver().findElement(By.cssSelector("label[for=gender-radio-3]"));
+//            genderField.click();
+//        }
+//    }
 
 }

@@ -80,6 +80,12 @@ public class ElementMethods {
         js.executeScript("arguments[0].click();",element);
     }
 
+
+    public void clickElemForce2(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+        js.executeScript("arguments[0].click();",element);
+    }
+
 }
 
 
