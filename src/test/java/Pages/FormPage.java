@@ -4,8 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class PracticeFormPage  extends  BasePage{
-    public PracticeFormPage(WebDriver webDriver) {
+public class FormPage extends  BasePage{
+    public FormPage(WebDriver webDriver) {
         super(webDriver);
     }
 

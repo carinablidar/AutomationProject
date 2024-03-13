@@ -65,6 +65,9 @@ public class PractiseFormsPage extends BasePage {
     @FindBy(css = ".react-datepicker__input-container")
     private WebElement dateOfBirthField;
 
+    @FindBy(css = ".react-datepicker__month-dropdown-container--select")
+    private WebElement datePicker;
+
     @FindBy(css = ".react-datepicker__month-select")
     private WebElement monthDateOfBirth;
 
@@ -125,9 +128,9 @@ public class PractiseFormsPage extends BasePage {
 
     public void fillDateOfBirth(String monthValue, String yearValue, String dayValue) {
         elementMethods.clickElement(dateOfBirthField);
+        elementMethods.clickElement(datePicker);
         elementMethods.selectValueElement(monthDateOfBirth, monthValue);
         elementMethods.selectTextElement(yearDateOfBirth, yearValue);
-        elementMethods.selectTextElement(dayDateOfBirthFields, dayValue);
 
 
         for (Integer i = 0; i < dayDateOfBirthFields.size(); i++) {
@@ -148,8 +151,7 @@ public class PractiseFormsPage extends BasePage {
         for (int i = 0; i < hobbiesLabelsList.size(); i++) {
             String currentElementText = hobbiesLabelsList.get(i).getText();
             if (hobbies.contains(currentElementText)) {
-                new WebDriverWait(getGetWebDriver(), Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(hobbiesLabelsList.get(i))).click();
-
+                elementMethods.clickElement(hobbiesLabelsList.get(i));
             }
         }
     }
@@ -159,13 +161,28 @@ public class PractiseFormsPage extends BasePage {
     }
 
     public void uploadPicture(String filePath) {
-
         elementMethods.filledElement(pictureField, new File(filePath).getAbsolutePath());
     }
 
     public void pickAddress(String addressValue) {
 
         elementMethods.filledElement(addressField, addressValue);
+    }
+
+    public void fillState( String stateValue) {
+
+        elementMethods.clickElement(stateField);
+        elementMethods.fillPressElement(stateInputFiled, stateValue, Keys.ENTER);
+    }
+
+    public void pickCity(String cityValue) {
+
+        elementMethods.clickElement(cityField);
+        elementMethods.fillPressElement(cityInputField, cityValue, Keys.ENTER);
+    }
+
+    public void clickSubmit() {
+       elementMethods.clickElement(submit);
     }
 
 
