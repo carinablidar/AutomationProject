@@ -26,6 +26,8 @@ public class HomePage extends BasePage {
     private  WebElement elementField;
 
 
+
+
     public void navigateToAlertFrameWindowPage() {
         elementMethods.ScrollElementByPixel(0,450);
        // elementMethods.clickElement(consentField);

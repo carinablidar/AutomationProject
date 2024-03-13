@@ -18,6 +18,9 @@ public class AlertWindowFramePage extends BasePage {
     @FindBy(xpath = "//span[text()='Frames']")
     public WebElement frameField;
 
+    @FindBy(xpath = "//span[text()='Browser Windows']")
+    public  WebElement browserWindowField;
+
     public void navigateToAlertPage() {
         elementMethods.ScrollElementByPixel(0,350);
         elementMethods.clickElement(alertField);
@@ -25,5 +28,9 @@ public class AlertWindowFramePage extends BasePage {
 
     public void navigateToFramePage() {
         elementMethods.clickElement(frameField);
+    }
+
+    public void navigateToWindowPage() {
+        elementMethods.clickElement(browserWindowField);
     }
 }
