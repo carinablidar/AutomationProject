@@ -22,6 +22,9 @@ public class HomePage extends BasePage {
     @FindBy(xpath = "//h5[text()='Forms']")
     private WebElement elementsField;
 
+    @FindBy(xpath = "//h5[text()='Elements']")
+    private  WebElement elementField;
+
 
     public void navigateToAlertFrameWindowPage() {
         elementMethods.ScrollElementByPixel(0,450);
@@ -32,6 +35,11 @@ public class HomePage extends BasePage {
     public void navigateToFormsPage() {
         elementMethods.ScrollElementByPixel(0,450);
         elementMethods.clickElement(elementsField);
+    }
+
+    public void navigateToElemetsPage() {
+        elementMethods.ScrollElementByPixel(0,450);
+        elementMethods.clickElement(elementField);
     }
 
 }
