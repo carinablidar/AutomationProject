@@ -28,7 +28,7 @@ public class PacticeFormTest extends ShareData {
 
         String firstNameValue = "Carina";
         String lastNameValue = "Blidar";
-        String emailValue = "test@test.com";
+        String emailValue = "test@yahoo.com";
         String numarValue = "1234567890";
         String monthValue = "6";
         String yearValue = "1995";
@@ -43,26 +43,10 @@ public class PacticeFormTest extends ShareData {
 
 
         PractiseFormsPage practiseFormsPage = new PractiseFormsPage(getGetWebDriver());
-        practiseFormsPage.fillFirstName(firstNameValue);
-        practiseFormsPage.fillLastName(lastNameValue);
-        practiseFormsPage.fillEmail(emailValue);
-        practiseFormsPage.fillNumarField(numarValue);
-        practiseFormsPage.fillDateOfBirth(monthValue, yearValue, dayValue);
-        practiseFormsPage.pickGender(genderValue);
-        practiseFormsPage.pickHobbies(hobbies);
-        practiseFormsPage.pickSubject(subjectsValue);
-        practiseFormsPage.uploadPicture(filePath);
-        practiseFormsPage.pickAddress(addressValue);
-        practiseFormsPage.fillState(stateValue);
-        practiseFormsPage.pickCity(cityValue);
-        practiseFormsPage.clickSubmit();
+        practiseFormsPage.fillEntireForm(firstNameValue, lastNameValue, emailValue, numarValue, monthValue,
+                yearValue, dayValue, genderValue, hobbies, subjectsValue,filePath, addressValue, stateValue, cityValue);
         practiseFormsPage.validatePractiseFormTable(firstNameValue, lastNameValue, emailValue, genderValue,
                 numarValue, subjectsValue, hobbies, filePath,
                 addressValue, stateValue, cityValue);
-
-
-
     }
-
-
 }
