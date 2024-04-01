@@ -1,5 +1,6 @@
 package Pages;
 
+import ObjectData.AlertObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -38,10 +39,10 @@ public class AlertPage extends BasePage{
         alertMethods.acceptAlert();
     }
 
-    public void dealWithPromtButton(String text) {
+    public void dealWithPromtButton(AlertObject alertObject) {
         elementMethods.clickElement(prompAlert);
-        alertMethods.fieldAlert(text);
-        elementMethods.validateElementText(validare2, "You entered " + text);
+        alertMethods.fieldAlert(alertObject.getText());
+        elementMethods.validateElementText(validare2, "You entered " + alertObject.getText());
     }
 
     public void dealWithCancelButton() {

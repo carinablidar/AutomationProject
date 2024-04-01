@@ -214,11 +214,7 @@ public class PractiseFormsPage extends BasePage {
 
         Assert.assertEquals(labelFields.get(6).getText(), "Hobbies");
         for (Integer index = 0; index < practiceFormObject.getHobbies().size(); index++) {
-            /*System.out.println("value fields: " + valueFields.get(6).getText());
-            System.out.println("------------------------");
-            System.out.println("practice form: " + practiceFormObject.getHobbies().get(index));*/
-
-            // Assert.assertTrue(valueFields.get(6).getText().contains(practiceFormObject.getHobbies().get(index)));
+            Assert.assertTrue(valueFields.get(6).getText().contains(practiceFormObject.getHobbies().get(0)));
         }
 
         Assert.assertEquals(labelFields.get(7).getText(), "Picture");

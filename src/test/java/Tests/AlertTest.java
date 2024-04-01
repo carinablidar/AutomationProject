@@ -2,9 +2,11 @@ package Tests;
 
 import HelperMethods.AlertMethods;
 import HelperMethods.ElementMethods;
+import ObjectData.AlertObject;
 import Pages.AlertPage;
 import Pages.AlertWindowFramePage;
 import Pages.HomePage;
+import ProertyUtility.PropertyUtility;
 import ShareData.ShareData;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,6 +24,9 @@ public class AlertTest extends ShareData {
     @Test
     public void alertMethod() {
 
+        PropertyUtility propertyUtility = new PropertyUtility("AlertData");
+        AlertObject alertObject = new AlertObject(propertyUtility.getAllData());
+
         HomePage homePage = new HomePage(getGetWebDriver());
         homePage.navigateToAlertFrameWindowPage();
 
@@ -33,7 +38,7 @@ public class AlertTest extends ShareData {
         AlertPage alertPage = new AlertPage(getGetWebDriver());
         alertPage.dealWithAcceptAlert();
         alertPage.dealWithDelayAlert();
-        alertPage.dealWithPromtButton("text");
+        alertPage.dealWithPromtButton(alertObject);
         alertPage.dealWithCancelButton();
     }
 }
