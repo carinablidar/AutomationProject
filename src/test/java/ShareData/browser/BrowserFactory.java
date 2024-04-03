@@ -23,7 +23,7 @@ public class BrowserFactory {
             browser = browserData.get("browser");
 
         }
-        System.out.println("!!!!!!!!!!");
+        System.out.println("!!!!!!!!!!!!!!!");
         System.out.println(browser);
 
         //dupa ce am aflat pe ce enviroment trebuie sa rulez deschid browserul dorit
