@@ -21,7 +21,7 @@ public class EdgeService implements BrowserService{
 
         EdgeOptions options = (EdgeOptions) getBrowserOptions(propertyUtility.getAllData());
         webDriver = new EdgeDriver(options);
-        webDriver = new EdgeDriver();
+       // webDriver = new EdgeDriver();
         webDriver.get(propertyUtility.getAllData().get("url"));
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
