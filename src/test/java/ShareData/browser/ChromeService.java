@@ -18,7 +18,7 @@ public class ChromeService implements BrowserService{
 
         ChromeOptions options = (ChromeOptions) getBrowserOptions(testData);
         webDriver = new ChromeDriver(options);
-        webDriver = new ChromeDriver();
+      //  webDriver = new ChromeDriver();
         webDriver.get(testData.get("url"));
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
