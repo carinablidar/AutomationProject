@@ -1,19 +1,12 @@
 package Tests;
 
-import HelperMethods.ElementMethods;
-import HelperMethods.FrameMethods;
 import Pages.AlertWindowFramePage;
 import Pages.FramePage;
 import Pages.HomePage;
-import ShareData.ShareData;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import ShareData.Hooks;
 import org.testng.annotations.Test;
 
-public class FrameTest extends ShareData {
+public class FrameTest extends Hooks {
 
 
 
