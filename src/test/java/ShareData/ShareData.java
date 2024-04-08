@@ -12,13 +12,13 @@ public class ShareData {
 
     private WebDriver getWebDriver;
 
-    @BeforeMethod
+
     public void prepareDriver() {
 
         getWebDriver = new BrowserFactory().getBrowserInstance();
     }
 
-    @AfterMethod
+
     public void clearDriver() {
 
         getWebDriver.quit();

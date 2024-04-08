@@ -2,6 +2,7 @@ package Pages;
 
 import HelperMethods.ElementMethods;
 import com.google.j2objc.annotations.Weak;
+import loggerUtility.LoggerUtility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,18 +31,24 @@ public class HomePage extends BasePage {
 
     public void navigateToAlertFrameWindowPage() {
         elementMethods.ScrollElementByPixel(0,450);
+        LoggerUtility.infoTest("The user scroll down the page");
        // elementMethods.clickElement(consentField);
         elementMethods.clickElement(windowField);
+        LoggerUtility.infoTest("The user clicks on windowFiled element");
     }
 
     public void navigateToFormsPage() {
         elementMethods.ScrollElementByPixel(0,450);
+        LoggerUtility.infoTest("The user scroll down the page");
         elementMethods.clickElement(elementsField);
+        LoggerUtility.infoTest("The user clicks on windowFiled element");
     }
 
     public void navigateToElemetsPage() {
         elementMethods.ScrollElementByPixel(0,450);
+        LoggerUtility.infoTest("The user scroll down the page");
         elementMethods.clickElement(elementField);
+        LoggerUtility.infoTest("The user clicks on windowFiled element");
     }
 
 }

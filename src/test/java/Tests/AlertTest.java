@@ -7,7 +7,7 @@ import Pages.AlertPage;
 import Pages.AlertWindowFramePage;
 import Pages.HomePage;
 import ProertyUtility.PropertyUtility;
-import ShareData.ShareData;
+import ShareData.Hooks;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,7 +18,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class AlertTest extends ShareData {
+public class AlertTest extends Hooks {
 
 
     @Test
