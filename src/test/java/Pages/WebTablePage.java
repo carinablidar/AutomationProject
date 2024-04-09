@@ -1,6 +1,7 @@
 package Pages;
 
 import ObjectData.WebTableObject;
+import loggerUtility.LoggerUtility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -45,22 +46,43 @@ public class WebTablePage extends BasePage{
 
         addButton.click();
         elementMethods.refillElement(firstField, webTableObject.getFirstnameValue());
+        LoggerUtility.infoTest("The user add first name value");
+
         elementMethods.refillElement(secondField, webTableObject.getLastnameValue());
+        LoggerUtility.infoTest("The user add last name value");
+
         elementMethods.refillElement(thirdField, webTableObject.getEmailValue());
+        LoggerUtility.infoTest("The user add email value");
+
         elementMethods.refillElement(forthField, webTableObject.getAgeValue());
+        LoggerUtility.infoTest("The user add age value");
+
         elementMethods.refillElement(fifthField, webTableObject.getSalaryValue());
+        LoggerUtility.infoTest("The user add salary value");
+
         elementMethods.refillElement(sixthField, webTableObject.getDepartamentValue());
+        LoggerUtility.infoTest("The user add department value");
+
         elementMethods.clickElement(submitButton);
+        LoggerUtility.infoTest("The user click on submit button");
     }
 
     public void editEntry(WebTableObject webTableObject) {
         elementMethods.clickElement(editField);
+        LoggerUtility.infoTest("The user clicks on edit field");
+
         elementMethods.refillElement(firstField, webTableObject.getFirstnameModifyValue());
+        LoggerUtility.infoTest("The user edit first name value");
+
         elementMethods.refillElement(forthField, webTableObject.getAgeModifyValue());
+        LoggerUtility.infoTest("The user edit age value");
+
         elementMethods.clickElement(submitButton);
+        LoggerUtility.infoTest("The user click on submit button");
     }
 
     public void deleteButton() {
         elementMethods.clickElement(deleteButton);
+        LoggerUtility.infoTest("The user click on delete button");
     }
 }

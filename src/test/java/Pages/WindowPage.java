@@ -25,7 +25,7 @@ public class WindowPage extends BasePage{
         LoggerUtility.infoTest("The user switch to a tab with index 1");
 
         windowMethods.closeCurrentWindow();
-        LoggerUtility.infoTest("The user clouse the current tab");
+        LoggerUtility.infoTest("The user close the current tab");
 
         windowMethods.switchSpecificWindow(0);
         LoggerUtility.infoTest("The user switch to a tab with index 0");
@@ -39,7 +39,7 @@ public class WindowPage extends BasePage{
         LoggerUtility.infoTest("The user switch to a window with index 1");
 
         windowMethods.closeCurrentWindow();
-        LoggerUtility.infoTest("The user clouse the current tab");
+        LoggerUtility.infoTest("The user close the current tab");
 
         windowMethods.switchSpecificWindow(0);
         LoggerUtility.infoTest("The user switch to a window with index 0");

@@ -1,20 +1,14 @@
 package Tests;
 
 import ObjectData.PracticeFormObject;
-import ObjectData.WebTableObject;
-import Pages.HomePage;
 import Pages.FormPage;
+import Pages.HomePage;
 import Pages.PractiseFormsPage;
 import ProertyUtility.PropertyUtility;
-import ShareData.ShareData;
-import org.openqa.selenium.*;
-import org.testng.Assert;
+import ShareData.Hooks;
 import org.testng.annotations.Test;
 
-import java.util.Arrays;
-import java.util.List;
-
-public class PacticeFormTest extends ShareData {
+public class PacticeFormTest extends Hooks {
 
 
 

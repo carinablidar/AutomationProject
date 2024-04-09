@@ -1,20 +1,14 @@
 package Tests;
 
-import HelperMethods.ElementMethods;
 import ObjectData.WebTableObject;
 import Pages.ElementsPage;
 import Pages.HomePage;
 import Pages.WebTablePage;
 import ProertyUtility.PropertyUtility;
-import ShareData.ShareData;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import ShareData.Hooks;
 import org.testng.annotations.Test;
 
-public class WebTableTest extends ShareData {
+public class WebTableTest extends Hooks {
 
     @Test
     public void metodaTest() {

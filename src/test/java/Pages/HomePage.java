@@ -32,7 +32,7 @@ public class HomePage extends BasePage {
     public void navigateToAlertFrameWindowPage() {
         elementMethods.ScrollElementByPixel(0,450);
         LoggerUtility.infoTest("The user scroll down the page");
-       // elementMethods.clickElement(consentField);
+
         elementMethods.clickElement(windowField);
         LoggerUtility.infoTest("The user clicks on windowFiled element");
     }
@@ -40,6 +40,7 @@ public class HomePage extends BasePage {
     public void navigateToFormsPage() {
         elementMethods.ScrollElementByPixel(0,450);
         LoggerUtility.infoTest("The user scroll down the page");
+
         elementMethods.clickElement(elementsField);
         LoggerUtility.infoTest("The user clicks on windowFiled element");
     }
@@ -47,6 +48,7 @@ public class HomePage extends BasePage {
     public void navigateToElemetsPage() {
         elementMethods.ScrollElementByPixel(0,450);
         LoggerUtility.infoTest("The user scroll down the page");
+
         elementMethods.clickElement(elementField);
         LoggerUtility.infoTest("The user clicks on windowFiled element");
     }

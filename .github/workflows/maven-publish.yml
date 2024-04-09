@@ -41,4 +41,3 @@ jobs:
           name: SuiteResults
           path: |
             target/logs/suite.log
-
